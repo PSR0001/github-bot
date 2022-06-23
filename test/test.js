@@ -1,3 +1,9 @@
+/**************************************************
+ * 
+ *  This is use for test cases 
+ * 
+ **************************************************/
+ 'use strict'; //use in strict mode
 const jsonfile = require ('jsonfile')
 const moment = require('moment')
 const random=require('random')
