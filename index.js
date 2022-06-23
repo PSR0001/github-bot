@@ -22,9 +22,9 @@ const FILE_PATH='./data.json';
 const makeCommit = n => {
     if(n===0) return simpleGit().push(); ///recursive call end .... git push
 
-    const x = random.int(0,12)
+    const x = random.int(0,8)
     const y = random.int(0,6)
-    const DATE = moment().subtract(6,'m').add(x,'w').add(y,'d').format();
+    const DATE = moment().subtract(2,'months').add(x,'w').add(y,'d').format();
 
     const data = {
         date:DATE
@@ -37,6 +37,6 @@ const makeCommit = n => {
     })
 }
 
-makeCommit(200) // create 100 commit
+makeCommit(100) // create 100 commit
 
 

@@ -9,9 +9,9 @@ const FILE_PATH='./data.json';
 const makeCommit = n => {
     if(n===0) return "end" ///recursive call end .... git push
 
-    const x = random.int(0,3)
+    const x = random.int(0,8)
     const y = random.int(0,6)
-    const DATE = moment().subtract(1,'m').add(x,'w').add(y,'d').format();
+    const DATE = moment().subtract(2,'months').add(x,'w').add(y,'d').format();
 
     const data = {
         date:DATE
@@ -19,10 +19,12 @@ const makeCommit = n => {
 
     console.log(`Date : ${DATE}`);
 
-    jsonfile.writeFile(FILE_PATH,data) 
+    jsonfile.writeFile(FILE_PATH,data,()=>{
+        makeCommit(--n)
+    }) 
     
 }
 
-makeCommit(10) // create 100 commit
+makeCommit(50) // create 100 commit
 
 
